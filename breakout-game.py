@@ -10,7 +10,7 @@ import math
 import random
 
 class Walls(Sprite):
-    def __init__(self, asset, position):
+    def __init__(self, position, asset):
         super().__init__(asset, position)
 
 class BreakoutGame(App):
