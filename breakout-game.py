@@ -25,8 +25,8 @@ class Ball(Sprite):
     def __init__(self, position):
         super().__init__(Ball.circ, position)
         self.speed = 3
-        self.vx = self.speed
-        self.vy = 0
+        self.vx = 0
+        self.vy = -self.speed
         
     """
     def self.bounce(self):
