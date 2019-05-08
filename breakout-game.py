@@ -22,7 +22,7 @@ class Ball(Sprite):
     noline = LineStyle(0, black)
     circ = CircleAsset(5, noline, black)
     
-    def __init__(self, position, bottom):
+    def __init__(self, position):
         super().__init__(Ball.circ, position)
         self.speed = 3
         self.vx = 0
