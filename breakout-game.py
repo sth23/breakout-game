@@ -47,7 +47,7 @@ class Paddle(Sprite):
         elif self.vx < 0 and self.x > 10:
             self.x += self.vx
         else:
-            self.x = 0
+            self.vx = 0
 
 class BreakoutGame(App):
     black = Color(0, 1)
