@@ -24,6 +24,10 @@ class Ball(Sprite):
         self.vx = 0
         self.vy = self.speed
         
+    def step(self):
+        self.x += self.vx
+        self.y += self.vy
+        
 class Paddle(Sprite):
     black = Color(0, 1)
     noline = LineStyle(0, black)
