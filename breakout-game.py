@@ -42,7 +42,7 @@ class Paddle(Sprite):
         self.vx = 0
         
     def step(self):
-        if self.vx > 0 and self.x < self.maxwidth - 10:
+        if self.vx > 0 and self.x < self.maxwidth - 10 - self.width:
             self.x += self.vx
         elif self.vx < 0 and self.x > 10:
             self.x += self.vx
