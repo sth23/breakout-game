@@ -20,7 +20,7 @@ class Paddle(Sprite):
     
     def __init__(self, position):
         super().__init__(Paddle.rect, position)
-        self.speed = 1
+        self.speed = 5
         self.vx = 0
         
         BreakoutGame.listenKeyEvent("keydown", "right arrow", self.moveRightOn)
