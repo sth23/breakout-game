@@ -117,6 +117,8 @@ class BreakoutGame(App):
             print("Game Over")
             self.ball.destroy()
             self.destroy()
+            
+        print(self.ball.x)
         
 myapp = BreakoutGame()
 myapp.run()
