@@ -22,7 +22,7 @@ class BreakoutGame(App):
         
         # Create walls
         self.ceiling = RectangleAsset(self.width, 10, BreakoutGame.noline, BreakoutGame.black)
-        self.wall = RectangeAsset(10, self.height, BreakoutGame.noline, BreakoutGame.black)
+        self.wall = RectangleAsset(10, self.height, BreakoutGame.noline, BreakoutGame.black)
         
         Walls((0, 0), self.ceiling)
         Walls((0, 0), self.wall)
