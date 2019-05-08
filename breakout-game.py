@@ -93,13 +93,17 @@ class BreakoutGame(App):
         self.player = Paddle((self.width/2, self.height - 50), self.width)
         self.ball = Ball((self.width/2, self.height/2))
         
-    def wallBounce(self):
-        self.ball.vx = -self.ball.vx
-        
-        
     def step(self):
         self.player.step()
         self.ball.step()
+        
+        # Ball bouncing off walls
+        if self.ball.x = 10:
+            self.ball.vx = -self.ball.vx
+        elif: self.ball.x = self.width - 10:
+            self.ball.vx = -self.ball.vx
+        
+        # Ball falling down past paddle
         if self.ball.y > self.height and self.lives > 0:
             self.ball.x = self.width/2
             self.ball.y = self.height/2
