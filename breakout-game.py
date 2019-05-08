@@ -101,6 +101,8 @@ class BreakoutGame(App):
             self.ball.y = self.height/2
             self.lives -= 1
             print("Lives: " + str(self.lives))
+        if self.lives < 0:
+            print("Game Over")
         
 myapp = BreakoutGame()
 myapp.run()
