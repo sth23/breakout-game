@@ -79,6 +79,7 @@ class BreakoutGame(App):
     
     def __init__(self):
         super().__init__()
+        self.lives = 3
         
         # Create walls
         self.ceiling = RectangleAsset(self.width, 10, BreakoutGame.noline, BreakoutGame.black)
@@ -94,9 +95,11 @@ class BreakoutGame(App):
     def step(self):
         self.player.step()
         self.ball.step()
-        if self.ball.y > self.height:
+        if self.ball.y > self.height and self.lives > 0:
             self.ball.x = self.width/2
             self.ball.y = self.height/2
+            self.lives -= 1
+            print(self.lives)
         
 myapp = BreakoutGame()
 myapp.run()
