@@ -84,6 +84,7 @@ class BreakoutGame(App):
         
     def step(self):
         self.player.step()
+        self.ball.step()
         
 myapp = BreakoutGame()
 myapp.run()
