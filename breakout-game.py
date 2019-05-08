@@ -106,6 +106,10 @@ class BreakoutGame(App):
         # Ball bouncing off ceiling
         if self.ball.y < 10:
             self.ball.vy = -self.ball.vy
+            
+        # Ball bouncing off paddle
+        if self.ball.collidingWithSprites(Paddle):
+            self.ball.vy = - self.ball.vy
         
         # Ball falling down past paddle
         if self.ball.y > self.height and self.lives > 0:
