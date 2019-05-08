@@ -64,7 +64,7 @@ class BreakoutGame(App):
         Walls((0, 0), self.wall)
         Walls((self.width - 10, 0), self.wall)
         
-        self.player = Paddle((self.width/2, self.height - 20), self.width)
+        self.player = Paddle((self.width/2, self.height - 50), self.width)
         
     def step(self):
         self.player.step()
