@@ -22,11 +22,15 @@ class Ball(Sprite):
     noline = LineStyle(0, black)
     circ = CircleAsset(5, noline, black)
     
-    def __init__(self, position):
+    def __init__(self, position, bottom):
         super().__init__(Ball.circ, position)
         self.speed = 3
         self.vx = 0
         self.vy = self.speed
+        self.bottom = bottom
+        
+    def self.bounce(self):
+        if
         
     def step(self):
         self.x += self.vx
@@ -89,6 +93,9 @@ class BreakoutGame(App):
     def step(self):
         self.player.step()
         self.ball.step()
+        if self.ball.y > self.height:
+            self.ball.x = self.width/2
+            self.ball.y = self.height/2
         
 myapp = BreakoutGame()
 myapp.run()
