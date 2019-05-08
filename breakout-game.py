@@ -16,7 +16,7 @@ class Walls(Sprite):
 class Paddle(Sprite):
     black = Color(0, 1)
     noline = LineStyle(0, black)
-    rect = RectangleAsset(100, 10, noline, black)
+    rect = RectangleAsset(50, 10, noline, black)
     
     def __init__(self, position):
         super().__init__(Paddle.rect, position)
