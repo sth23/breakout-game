@@ -20,6 +20,9 @@ class Ball(Sprite):
     
     def __init__(self, position):
         super().__init__(Ball.circ, position)
+        self.speed = 10
+        self.vx = 0
+        self.vy = self.speed
         
 class Paddle(Sprite):
     black = Color(0, 1)
@@ -73,6 +76,7 @@ class BreakoutGame(App):
         Walls((self.width - 10, 0), self.wall)
         
         self.player = Paddle((self.width/2, self.height - 50), self.width)
+        self.ball = Ball((self.width/2, self.height/2))
         
     def step(self):
         self.player.step()
