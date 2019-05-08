@@ -111,6 +111,8 @@ class BreakoutGame(App):
         if self.ball.y > self.height and self.lives > 0:
             self.ball.x = self.width/2
             self.ball.y = self.height/2
+            self.ball.vx = 0
+            self.ball.vy = self.ball.speed
             self.lives -= 1
             print("Lives: " + str(self.lives))
         elif self.ball.y > self.height:
