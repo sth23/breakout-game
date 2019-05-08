@@ -25,8 +25,8 @@ class Ball(Sprite):
     def __init__(self, position):
         super().__init__(Ball.circ, position)
         self.speed = 3
-        self.vx = 0
-        self.vy = self.speed
+        self.vx = self.speed
+        self.vy = -self.speed
         
     """
     def self.bounce(self):
@@ -92,6 +92,10 @@ class BreakoutGame(App):
         
         self.player = Paddle((self.width/2, self.height - 50), self.width)
         self.ball = Ball((self.width/2, self.height/2))
+        
+    def wallBounce(self):
+        self.ball.vx = -self.ball.vx
+        
         
     def step(self):
         self.player.step()
