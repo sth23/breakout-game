@@ -100,7 +100,7 @@ class BreakoutGame(App):
         # Ball bouncing off walls
         if self.ball.x < 10:
             self.ball.vx = -self.ball.vx
-        elif self.ball.x > self.width - 10:
+        elif self.ball.x > self.width - 15:
             self.ball.vx = -self.ball.vx
             
         # Ball bouncing off ceiling
