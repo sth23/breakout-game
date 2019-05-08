@@ -30,21 +30,24 @@ class Paddle(Sprite):
         BreakoutGame.listenKeyEvent("keyup", "left arrow", self.moveLeftOff)
         
     def moveRightOn(self, event):
-        if self.x < self.maxwidth - 10:
-            self.vx = self.speed
+        self.vx = self.speed
         
     def moveRightOff(self, event):
         self.vx = 0
         
     def moveLeftOn(self, event):
-        if self.x > 10:
-            self.vx = -self.speed
+        self.vx = -self.speed
         
     def moveLeftOff(self, event):
         self.vx = 0
         
     def step(self):
-        self.x += self.vx
+        if self.vx > 0 and self.x < self.maxwidth - 10:
+            self.x += self.vx
+        elif: self.vx < 0 and self.x > 10:
+            self.x += self.vx
+        else:
+            self.x = 0
 
 class BreakoutGame(App):
     black = Color(0, 1)
