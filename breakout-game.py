@@ -21,8 +21,8 @@ class BreakoutGame(App):
         super().__init__()
         
         # Create walls
-        self.ceiling = RectangleAsset(self.width, 10, noline, black)
-        self.wall = RectangeAsset(10, self.height, noline, black)
+        self.ceiling = RectangleAsset(self.width, 10, BreakoutGame.noline, BreakoutGame.black)
+        self.wall = RectangeAsset(10, self.height, BreakoutGame.noline, BreakoutGame.black)
         
         Walls((0, 0), self.ceiling)
         Walls((0, 0), self.wall)
