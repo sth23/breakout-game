@@ -80,7 +80,7 @@ class BreakoutGame(App):
     def __init__(self):
         super().__init__()
         self.lives = 3
-        print("Lives: " + str(self.lives)
+        print("Lives: " + str(self.lives))
         
         # Create walls
         self.ceiling = RectangleAsset(self.width, 10, BreakoutGame.noline, BreakoutGame.black)
