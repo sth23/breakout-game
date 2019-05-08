@@ -98,7 +98,7 @@ class BreakoutGame(App):
         self.ball.step()
         
         # Ball bouncing off walls
-        if self.ball.x > 10:
+        if self.ball.x < 10:
             self.ball.vx = -self.ball.vx
         elif self.ball.x > self.width - 10:
             self.ball.vx = -self.ball.vx
