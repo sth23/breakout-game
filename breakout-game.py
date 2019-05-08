@@ -21,6 +21,7 @@ class Paddle(Sprite):
     def __init__(self, position):
         super().__init__(Paddle.rect, position)
         self.speed = 1
+        self.vx = 0
         
     def moveRightOn(self, event):
         self.vx = -self.speed
