@@ -13,6 +13,14 @@ class Walls(Sprite):
     def __init__(self, position, asset):
         super().__init__(asset, position)
         
+class Ball(Sprite):
+    black = Color(0, 1)
+    noline = LineStyle(0, black)
+    circ = CircleAsset(5, noline, black)
+    
+    def __init__(self, position):
+        super().__init__(Ball.circ, position)
+        
 class Paddle(Sprite):
     black = Color(0, 1)
     noline = LineStyle(0, black)
