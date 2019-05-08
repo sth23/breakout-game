@@ -99,7 +99,6 @@ class BreakoutGame(App):
             self.ball.x = self.width/2
             self.ball.y = self.height/2
             self.lives -= 1
-            print(self.lives)
         
 myapp = BreakoutGame()
 myapp.run()
