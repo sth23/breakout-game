@@ -107,10 +107,10 @@ class BreakoutGame(App):
             self.ball.vy = - self.ball.vy
             if self.ball.x < self.player.width / 4 + self.player.x:
                 self.ball.vy = self.ball.vy * math.sin(math.pi/2)
-                self.ball.vx = -self.ball.vy
+                self.ball.vx = self.ball.vy
             elif self.ball.x > self.player.x - self.player.width * 3 / 4:
                 self.ball.vy = self.ball.vy * math.sin(math.pi/2)
-                self.ball.vx = self.ball.vy
+                self.ball.vx = -self.ball.vy
         
         # Ball falling down past paddle
         if self.ball.y > self.height and self.lives > 0:
