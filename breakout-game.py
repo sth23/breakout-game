@@ -27,11 +27,6 @@ class Ball(Sprite):
         self.speed = 3
         self.vx = 0
         self.vy = -self.speed
-        
-    """
-    def self.bounce(self):
-        Different behavior for when ball hits walls, ceiling, blocks, or paddle
-    """    
     
     def step(self):
         self.x += self.vx
@@ -110,6 +105,10 @@ class BreakoutGame(App):
         # Ball bouncing off paddle
         if self.ball.collidingWithSprites(Paddle):
             self.ball.vy = - self.ball.vy
+            if self.ball.x < self.player.width / 4 + self.player.x:
+                self.ball.vy = self.ball.vy * math.sin(math.pi/2)
+                self.ball.vx = -self.ball.vy
+            elif self.ball.x > self.player.x - self.player.width * 3 / 4:
         
         # Ball falling down past paddle
         if self.ball.y > self.height and self.lives > 0:
