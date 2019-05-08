@@ -12,6 +12,30 @@ import random
 class Walls(Sprite):
     def __init__(self, position, asset):
         super().__init__(asset, position)
+        
+class Paddle(Sprite):
+    black = Color(0, 1)
+    noline = LineStyle(0, black)
+    rect = RectangleAsset(100, 10, noline, black)
+    
+    def __init__(self, position):
+        super().__init__(Paddle.rect, position)
+        self.speed = 1
+        
+    def moveRightOn(self, event):
+        self.vx = -self.speed
+        
+    def moveRightOff(self, event):
+        self.vx = 0
+        
+    def moveLeftOn(self, event):
+        self.vx = -self.speed
+        
+    def moveLeftOff(self, event):
+        self.vx = 0
+        
+    def step(self):
+        self.x += self.vx
 
 class BreakoutGame(App):
     black = Color(0, 1)
