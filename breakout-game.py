@@ -27,7 +27,6 @@ class Ball(Sprite):
         self.speed = 3
         self.vx = 0
         self.vy = self.speed
-        self.bottom = bottom
         
     """
     def self.bounce(self):
