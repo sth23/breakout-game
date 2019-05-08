@@ -104,6 +104,7 @@ class BreakoutGame(App):
         elif self.ball.y > self.height:
             print("Game Over")
             self.ball.destroy()
+            self.destroy()
         
 myapp = BreakoutGame()
 myapp.run()
