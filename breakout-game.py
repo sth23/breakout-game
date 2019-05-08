@@ -104,7 +104,7 @@ class BreakoutGame(App):
             self.ball.vx = -self.ball.vx
             
         # Ball bouncing off ceiling
-        if self.ball.y == 10:
+        if self.ball.y < 10:
             self.ball.vy = -self.ball.vy
         
         # Ball falling down past paddle
