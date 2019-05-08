@@ -29,7 +29,7 @@ class Paddle(Sprite):
         BreakoutGame.listenKeyEvent("keyup", "left arrow", self.moveLeftOff)
         
     def moveRightOn(self, event):
-        if self.x < self.width-10):
+        if self.x < self.width - 10:
             self.vx = self.speed
         
     def moveRightOff(self, event):
