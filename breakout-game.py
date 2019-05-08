@@ -29,9 +29,11 @@ class Ball(Sprite):
         self.vy = self.speed
         self.bottom = bottom
         
+    """
     def self.bounce(self):
-        if
-        
+        Different behavior for when ball hits walls, ceiling, blocks, or paddle
+    """    
+    
     def step(self):
         self.x += self.vx
         self.y += self.vy
