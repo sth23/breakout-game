@@ -18,10 +18,11 @@ class Paddle(Sprite):
     noline = LineStyle(0, black)
     rect = RectangleAsset(50, 10, noline, black)
     
-    def __init__(self, position):
+    def __init__(self, position, maxwidth):
         super().__init__(Paddle.rect, position)
         self.speed = 10
         self.vx = 0
+        self.maxwidth = maxwidth
         
         BreakoutGame.listenKeyEvent("keydown", "right arrow", self.moveRightOn)
         BreakoutGame.listenKeyEvent("keyup", "right arrow", self.moveRightOff)
@@ -29,13 +30,15 @@ class Paddle(Sprite):
         BreakoutGame.listenKeyEvent("keyup", "left arrow", self.moveLeftOff)
         
     def moveRightOn(self, event):
-        self.vx = self.speed
+        if self.x < self.maxwidth - 10:
+            self.vx = self.speed
         
     def moveRightOff(self, event):
         self.vx = 0
         
     def moveLeftOn(self, event):
-        self.vx = -self.speed
+        if self.x > 10:
+            self.vx = -self.speed
         
     def moveLeftOff(self, event):
         self.vx = 0
