@@ -143,8 +143,9 @@ class BreakoutGame(App):
             brick.destroy()
             
         # Reset game if no bricks left
-        if !getSpritesbyClass(Bricks):
-            
+        if len(getSpritesbyClass(Bricks)) == 0:
+            player.speed += 0.5
+            self.CreateBricks()
         
         # Ball falling down past paddle
         if self.ball.y > self.height and self.lives > 0:
