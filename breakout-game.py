@@ -132,7 +132,7 @@ class BreakoutGame(App):
             print("Score: " + str(self.score))
             if self.ball.y > brick.y - brick.height:
                 self.ball.vy = -self.ball.vy
-            elif self.ball.y < brick.y - brick.height:
+            elif self.ball.y < brick.y:
                 self.ball.vy = -self.ball.vy
             else:
                 self.ball.vx = -self.ball.vx
