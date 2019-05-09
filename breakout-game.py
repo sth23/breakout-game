@@ -87,8 +87,8 @@ class BreakoutGame(App):
         self.brickasset = RectangleAsset(self.brickwidth, 25, noline, black)
         
         # Create walls
-        self.ceiling = RectangleAsset(self.width, 10, BreakoutGame.noline, BreakoutGame.black)
-        self.wall = RectangleAsset(10, self.height, BreakoutGame.noline, BreakoutGame.black)
+        self.ceiling = RectangleAsset(self.width, 10, noline, black)
+        self.wall = RectangleAsset(10, self.height, noline, black)
         
         self.ceiling = Ceiling((0, 0), self.ceiling)
         self.leftwall = Walls((0, 0), self.wall)
