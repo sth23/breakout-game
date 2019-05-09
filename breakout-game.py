@@ -91,7 +91,10 @@ class BreakoutGame(App):
         
         # Create bricks
         self.brickwidth = self.width - self.wall.width
-        #self.brickasset = RectangleAsset(self.
+        self.brickasset = RectangleAsset(self.brickwidth, 10, BreakoutGame.noline, BreakoutGame.black)
+        for row in range(0,6):
+            for column in range(0,10):
+                Bricks(self.brickasset, (10 + column * 110, row * 20 + 150))
         
         # Create player & ball
         self.player = Paddle((self.width/2, self.height - 50), self.width)
