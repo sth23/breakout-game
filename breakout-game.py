@@ -139,7 +139,7 @@ class BreakoutGame(App):
             brick.destroy()
             
         # Reset game if no bricks left
-        if len(getSpritesbyClass(Bricks)) == 0:
+        if len(self.getSpritesbyClass(Bricks)) == 0:
             player.speed += 0.5
             self.CreateBricks()
         
