@@ -17,6 +17,10 @@ class Ceiling(Sprite):
     def __init__(self, position, asset):
         super().__init__(asset, position)
         
+class Bricks(Sprite):
+    black = Color(0, 1)
+    noline = LineStyle(0, black)
+        
 class Ball(Sprite):
     black = Color(0, 1)
     noline = LineStyle(0, black)
@@ -85,6 +89,11 @@ class BreakoutGame(App):
         self.leftwall = Walls((0, 0), self.wall)
         self.rightwall = Walls((self.width - 10, 0), self.wall)
         
+        # Create bricks
+        self.brickwidth = self.width - self.wall.width
+        #self.brickasset = RectangleAsset(self.
+        
+        # Create player & ball
         self.player = Paddle((self.width/2, self.height - 50), self.width)
         self.ball = Ball((self.width/2, self.height/2))
         
