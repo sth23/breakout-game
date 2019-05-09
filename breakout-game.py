@@ -103,7 +103,7 @@ class BreakoutGame(App):
             self.ball.vy = -self.ball.vy
             
         # Ball bouncing off paddle
-        if self.ball.collidingWithSprites(Paddle):
+        if self.ball.collidingWithSprites(Paddle) and self.ball.y <= self.player.y:
             self.ball.vy = - self.ball.vy
             if self.ball.x < self.player.x + self.player.width / 5:
                 self.ball.vy = self.ball.vy * math.sin(math.pi/2)
