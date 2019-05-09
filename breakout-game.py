@@ -98,7 +98,7 @@ class BreakoutGame(App):
         
         # Create player & ball
         self.player = Paddle((self.width/2, self.height - 50), self.width)
-        self.ball = Ball((self.width/2, self.height/2))
+        self.ball = Ball((self.width/2, self.height/3))
         
     def step(self):
         self.player.step()
