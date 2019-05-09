@@ -84,7 +84,7 @@ class BreakoutGame(App):
         print("Lives: " + str(self.lives))
         
         self.brickwidth = (self.width - self.wall.width * 2 - 11 * 10) / 10
-        self.brickasset = RectangleAsset(self.brickwidth, 25, BreakoutGame.noline, BreakoutGame.black)
+        self.brickasset = RectangleAsset(self.brickwidth, 25, noline, black)
         
         # Create walls
         self.ceiling = RectangleAsset(self.width, 10, BreakoutGame.noline, BreakoutGame.black)
