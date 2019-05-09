@@ -95,11 +95,9 @@ class BreakoutGame(App):
         # Create bricks
         self.brickwidth = (self.width - self.wall.width * 2 - 11 * 10) / 10
         self.brickasset = RectangleAsset(self.brickwidth, 25, BreakoutGame.noline, BreakoutGame.black)
-        """
         for row in range(0,6):
             for column in range(0,10):
                 Bricks(self.brickasset, (25 + column * 110, row * 40 + 100))
-        """
         
         # Create player & ball
         self.player = Paddle((self.width / 2 - Paddle.paddlewidth / 2, self.height - 50), self.width)
@@ -131,7 +129,7 @@ class BreakoutGame(App):
                 
         # Ball hitting bricks
         for brick in self.ball.collidingWithSprites(Bricks):
-            self.score += 10
+            self.score += 10 * self.level
             print("Score: " + str(self.score))
             if self.ball.y > brick.y - brick.height:
                 self.ball.vy = -self.ball.vy
@@ -144,6 +142,7 @@ class BreakoutGame(App):
         # Reset game if no bricks left
         if len(self.getSpritesbyClass(Bricks)) == 0:
             self.player.speed += 0.5
+            self.level += 1
 
             # Create bricks
             for row in range(0,6):
