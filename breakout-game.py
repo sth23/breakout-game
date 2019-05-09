@@ -79,6 +79,7 @@ class BreakoutGame(App):
     
     def __init__(self):
         super().__init__()
+        self.score = 0
         self.lives = 3
         print("Lives: " + str(self.lives))
         
@@ -124,6 +125,10 @@ class BreakoutGame(App):
             elif self.ball.x > self.player.x + self.player.width * 3 / 4:
                 self.ball.vy = self.ball.vy * math.sin(math.pi/2)
                 self.ball.vx = -self.ball.vy
+                
+        # Ball hitting bricks
+        for brick in self.ball.collidingWithSprites(Bricks):
+            self.score += 10
         
         # Ball falling down past paddle
         if self.ball.y > self.height and self.lives > 0:
