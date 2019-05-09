@@ -80,7 +80,7 @@ class BreakoutGame(App):
     def __init__(self):
         super().__init__()
         self.score = 0
-        self.level = 1
+        self.level = 5
         self.lives = 3
         print("Lives: " + str(self.lives))
         
