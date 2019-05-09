@@ -90,7 +90,7 @@ class BreakoutGame(App):
         self.rightwall = Walls((self.width - 10, 0), self.wall)
         
         # Create bricks
-        self.brickwidth = (self.width - self.wall.width * 2 - 11 * 10) / 10
+        self.brickwidth = (self.width - self.wall.width * 2 - 11 * 10) / 12
         self.brickasset = RectangleAsset(self.brickwidth, 20, BreakoutGame.noline, BreakoutGame.black)
         for row in range(0,6):
             for column in range(0,10):
