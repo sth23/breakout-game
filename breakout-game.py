@@ -28,7 +28,7 @@ class Ball(Sprite):
     
     def __init__(self, position):
         super().__init__(Ball.circ, position)
-        self.speed = 5
+        self.speed = 3
         self.vx = 0
         self.vy = self.speed
     
@@ -80,7 +80,7 @@ class BreakoutGame(App):
     def __init__(self):
         super().__init__()
         self.score = 0
-        self.level = 5
+        self.level = 1
         self.lives = 3
         print("Lives: " + str(self.lives))
         
