@@ -83,9 +83,6 @@ class BreakoutGame(App):
         self.lives = 3
         print("Lives: " + str(self.lives))
         
-        self.brickwidth = (self.width - self.wall.width * 2 - 11 * 10) / 10
-        self.brickasset = RectangleAsset(self.brickwidth, 25, noline, black)
-        
         # Create walls
         self.ceiling = RectangleAsset(self.width, 10, noline, black)
         self.wall = RectangleAsset(10, self.height, noline, black)
@@ -93,18 +90,17 @@ class BreakoutGame(App):
         self.ceiling = Ceiling((0, 0), self.ceiling)
         self.leftwall = Walls((0, 0), self.wall)
         self.rightwall = Walls((self.width - 10, 0), self.wall)
-        
-        self.createBricks()
+    
+        # Create bricks
+        self.brickwidth = (self.width - self.wall.width * 2 - 11 * 10) / 10
+        self.brickasset = RectangleAsset(self.brickwidth, 25, BreakoutGame.noline, BreakoutGame.black)
+        for row in range(0,6):
+            for column in range(0,10):
+                Bricks(self.brickasset, (10 + column * 100, row * 40 + 100))
         
         # Create player & ball
         self.player = Paddle((self.width / 2 - Paddle.paddlewidth / 2, self.height - 50), self.width)
         self.ball = Ball((self.width / 2 - 5, self.height* 2 / 3))
-        
-    def createBricks(self):
-        # Create bricks
-        for row in range(0,6):
-            for column in range(0,10):
-                Bricks(self.brickasset, (25 + column * 110, row * 40 + 100))
         
     def step(self):
         self.player.step()
