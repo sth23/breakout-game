@@ -83,6 +83,9 @@ class BreakoutGame(App):
         self.lives = 3
         print("Lives: " + str(self.lives))
         
+        self.brickwidth = (self.width - self.wall.width * 2 - 11 * 10) / 10
+        self.brickasset = RectangleAsset(self.brickwidth, 25, BreakoutGame.noline, BreakoutGame.black)
+        
         # Create walls
         self.ceiling = RectangleAsset(self.width, 10, BreakoutGame.noline, BreakoutGame.black)
         self.wall = RectangleAsset(10, self.height, BreakoutGame.noline, BreakoutGame.black)
@@ -91,16 +94,17 @@ class BreakoutGame(App):
         self.leftwall = Walls((0, 0), self.wall)
         self.rightwall = Walls((self.width - 10, 0), self.wall)
         
-        # Create bricks
-        self.brickwidth = (self.width - self.wall.width * 2 - 11 * 10) / 10
-        self.brickasset = RectangleAsset(self.brickwidth, 25, BreakoutGame.noline, BreakoutGame.black)
-        for row in range(0,6):
-            for column in range(0,10):
-                Bricks(self.brickasset, (25 + column * 110, row * 40 + 100))
+        self.createBricks()
         
         # Create player & ball
         self.player = Paddle((self.width / 2 - Paddle.paddlewidth / 2, self.height - 50), self.width)
         self.ball = Ball((self.width / 2 - 5, self.height* 2 / 3))
+        
+    def createBricks(self):
+        # Create bricks
+        for row in range(0,6):
+            for column in range(0,10):
+                Bricks(self.brickasset, (25 + column * 110, row * 40 + 100))
         
     def step(self):
         self.player.step()
@@ -137,6 +141,10 @@ class BreakoutGame(App):
             else:
                 self.ball.vx = -self.ball.vx
             brick.destroy()
+            
+        # Reset game if no bricks left
+        if !getSpritesbyClass(Bricks):
+            
         
         # Ball falling down past paddle
         if self.ball.y > self.height and self.lives > 0:
