@@ -129,6 +129,7 @@ class BreakoutGame(App):
         # Ball hitting bricks
         for brick in self.ball.collidingWithSprites(Bricks):
             self.score += 10
+            print("Score: " + str(self.score))
         
         # Ball falling down past paddle
         if self.ball.y > self.height and self.lives > 0:
