@@ -90,10 +90,10 @@ class BreakoutGame(App):
         self.rightwall = Walls((self.width - 10, 0), self.wall)
         
         # Create bricks
-        self.brickwidth = self.width - self.wall.width
+        self.brickwidth = (self.width - self.wall.width * 2 - 11 * 10) / 10
         self.brickasset = RectangleAsset(self.brickwidth, 10, BreakoutGame.noline, BreakoutGame.black)
-        for row in range(0,1):
-            for column in range(0,2):
+        for row in range(0,6):
+            for column in range(0,10):
                 Bricks(self.brickasset, (10 + column * 120, row * 20 + 150))
         
         # Create player & ball
