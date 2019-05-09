@@ -30,7 +30,7 @@ class Ball(Sprite):
         super().__init__(Ball.circ, position)
         self.speed = 3
         self.vx = 0
-        self.vy = -self.speed
+        self.vy = self.speed
     
     def step(self):
         self.x += self.vx
