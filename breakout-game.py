@@ -130,7 +130,7 @@ class BreakoutGame(App):
         for brick in self.ball.collidingWithSprites(Bricks):
             self.score += 10
             print("Score: " + str(self.score))
-            if self.ball.y >= brick.y + brick.height:
+            if self.ball.y > brick.y + brick.height:
                 self.ball.vy = -self.ball.vy
             brick.destroy()
         
