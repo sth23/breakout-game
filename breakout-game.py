@@ -142,7 +142,7 @@ class BreakoutGame(App):
             
         # Reset game if no bricks left
         if len(self.getSpritesbyClass(Bricks)) == 0:
-            player.speed += 0.5
+            self.player.speed += 0.5
 
             # Create bricks
             for row in range(0,6):
