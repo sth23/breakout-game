@@ -141,7 +141,8 @@ class BreakoutGame(App):
         # Ball falling down past paddle
         if self.ball.y > self.height and self.lives > 0:
             self.ball.x = self.width/2
-            self.ball.y = self.height/2
+            self.ball.y = self.height*2/3
+            self.player.x = self.width / 2 - Paddle.paddlewidth
             self.ball.vx = 0
             self.ball.vy = self.ball.speed
             self.lives -= 1
