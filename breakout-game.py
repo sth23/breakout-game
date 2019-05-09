@@ -141,7 +141,11 @@ class BreakoutGame(App):
         # Reset game if no bricks left
         if len(self.getSpritesbyClass(Bricks)) == 0:
             player.speed += 0.5
-            self.CreateBricks()
+
+            # Create bricks
+            for row in range(0,6):
+                for column in range(0,10):
+                    Bricks(self.brickasset, (25 + column * 110, row * 40 + 100))
         
         # Ball falling down past paddle
         if self.ball.y > self.height and self.lives > 0:
