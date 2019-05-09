@@ -98,7 +98,7 @@ class BreakoutGame(App):
                 Bricks(self.brickasset, (25 + column * 110, row * 40 + 100))
         
         # Create player & ball
-        self.player = Paddle((self.width / 2 - Paddle.paddlewidth, self.height - 50), self.width)
+        self.player = Paddle((self.width / 2 - Paddle.paddlewidth / 2, self.height - 50), self.width)
         self.ball = Ball((self.width / 2, self.height* 2 / 3))
         
     def step(self):
